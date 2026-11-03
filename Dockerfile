@@ -1,4 +1,4 @@
-FROM docker.io/library/eclipse-temurin:17-jdk-noble
+FROM eclipse-temurin:17-jdk-noble
 
 WORKDIR /app
 
