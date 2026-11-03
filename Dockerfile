@@ -1,11 +1,13 @@
-   FROM eclipse-temurin:17-jdk-noble
+FROM docker.io/library/eclipse-temurin:17-jdk-noble
 
-   WORKDIR /app
+WORKDIR /app
 
-   COPY . .
+COPY . .
 
-   EXPOSE 8080
+RUN ./mvnw clean package
 
-   ENV NAME World
+EXPOSE 8080
 
-   CMD ["java", "Multiplication"]
+ENV MY_VARIABLE=my_value
+
+CMD ["java", "-jar", "target/my-app.jar"]
